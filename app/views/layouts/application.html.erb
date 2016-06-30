@@ -1,86 +1,48 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>SpoonBoards</title>
-    <%= stylesheet_link_tag    'application', media: 'all', "data-turbolinks-track" => true %>
-    <%= javascript_include_tag 'application',"data-turbolinks-track" => true %>
+<head>
+  <title>Gryp</title>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Gryppers</a>
+      </div>
 
-    <!-- <% if params[:action] == "new" && params[:controller] == "sessions" %>
-    <%= stylesheet_link_tag    'application', media: 'all', "data-turbolinks-track" => true %>
-    <%= javascript_include_tag 'application',"data-turbolinks-track" => true %>
-    boners
-    <% else %>
-    <%= stylesheet_link_tag    'application', media: 'all', "data-turbolinks-track" => false %>
-    <%= javascript_include_tag 'application', "data-turbolinks-track" => false %>
-    <% end %> -->
-    <%= csrf_meta_tags %>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.grey-teal.min.css"/>
-    <!-- test fonts -->
-    <!-- <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,300,400italic,700italic' rel='stylesheet' type='text/css'> -->
-    <!-- <link rel="stylesheet" href="https://www.google.com/fonts#UsePlace:use/Collection:Montserrat:400,700" rel="stylesheet" type="text/css"> -->
-    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,700' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    <link href="<%= asset_path('jquery.gridster.min.css') %>" rel="stylesheet" type="text/css">
-    <script src="<%= asset_path('jquery.gridster.min.js') %>"></script>
-  </head>
- <% if params[:action] == "new" && params[:controller] == "sessions" %>
-    <body>
-  <% else %>
-    <body data-no-turbolink>
-  <% end %>
-    <header>
-      <div class="nav-wrapper">
-        <ul>
-          <li><a href="/users/new" id="nav-link-sign-up">Sign Up</a></li>
-          <li><%= link_to 'My SpoonBoards', boards_path, id: 'nav-link-myspoonbaords' %></li>
-          <li><%= link_to 'Profile', users_path, id: 'nav-link-users'  %></li>
-          <li><%= link_to 'Logout', logout_path, id: 'nav-link-logout'  %></li>
-          <li id="nav-cart"><a href="/carts" id="nav-link-cart"><i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i></a></li>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li><a href="#">HOME</a></li>
+          <li><a href="#">ABOUT US</a></li>
+          <li><a href="#">TECHNOLOGY</a></li>
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#">PRODUCTS </a></li>
+          <li><a href="#">MEDIA/PRESS </a></li>
+          <li><a href="#">CONTACT </a></li>
         </ul>
       </div>
-      <div class="header-images-wrapper">
-        <div class="header-title"><img class="header-title-logo" src="<%= asset_path('SPBS.png') %>" alt="Logo"></div>
-        <div class="header-tag-line">Curate your Spoonflower experience</div>
-      </div>
-      <div class="header-search-container">
-        <%= form_tag searches_path, :method => 'get' do %>
-          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <%= text_field_tag :term, params[:term], class: "mdl-textfield__input" %>
-            <label class="mdl-textfield__label" for="term">Spoonflower Marketplace Search</label>
-          </div>
-          <div class="header-search-btn-wrapper"><%= button_to "", :name => nil, class: "mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect" do %>
-            <i class="material-icons">search</i>
-          <% end %>
-          </div>
-        <% end %>
-      </div>
-      <div class="notice-wrapper"><span id="notice"><%= notice %> </span></div> &nbsp;
-    </header>
-    <input type="hidden" name="controller_name" id="controller-name" value="<%= params[:controller] %>">
-    <input type="hidden" name="controller_action" id="controller-action" value="<%= params[:action] %>">
-    <input type="hidden" name="user_id" id="user-id" value="<%= session[:user_id] %>">
-
-    <div class="yield-container">
-      <%= yield %>
     </div>
+  </nav>
 
-    <footer class="mdl-mini-footer">
-      <div class="mdl-mini-footer__left-section">
-        <div class="mdl-logo">
-          SpoonBoards
-        </div>
-        <ul class="mdl-mini-footer__link-list">
-          <li><a href="https://support.spoonflower.com/hc/en-us" target="_blank">Help</a></li>
-          <li><a href="http://www.spoonflower.com/terms" target="_blank" >Privacy and Terms</a></li>
-          <li><a href="http://www.spoonflower.com/about" target="_blank">About Us</a></li>
-        </ul>
-      </div>
-      <div class="mdl-mini-footer__right-section">
-        <img class="footer-logo" src="<%= asset_path('spoonflower_powered_by_logo_vector_transparent.png') %>">
-      </div>
-    </footer>
-    <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
-  </body>
+
+
+
+
+
+<%= yield %>
+
+
+
+</body>
 </html>

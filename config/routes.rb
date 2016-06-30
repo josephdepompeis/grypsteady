@@ -28,6 +28,9 @@ Rails.application.routes.draw do
   post 'charges/index'
   post 'charges/new'
 
+
+  get 'contents/home'
+
   resources :designs
   resources :users
   resources :boards

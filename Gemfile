@@ -8,6 +8,7 @@ gem 'omniauth-facebook', '~> 3.0'
 gem 'omniauth-twitter'
 gem 'stripe'
 gem "introjs-rails"
+gem 'bootstrap-sass'
 
 
 gem 'localtunnel'
