@@ -28,7 +28,7 @@ Rails.application.routes.draw do
   post 'charges/index'
   post 'charges/new'
 
-
+  get 'contents/cart_area'
   get 'contents/home'
 
   resources :designs

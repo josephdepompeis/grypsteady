@@ -1,13 +1,7 @@
 <p id="alert" style="text-align:center;"><%= alert %></p>
 <p id="notice" style="text-align:center;"><%= notice %></p>
 
-<div class="login-background-container" style="background:url(<%= asset_path('login-background-2.png') %>) 95% / 25% repeat;" >
 
-  <div class="login-container">
-
-    <div class="login-title-container">
-      <img class="login-title-image" src="<%= asset_path('SPBS.png') %>" alt="Logo">
-    </div>
 
     <div class="login-form">
       <%= form_tag create_path do %>
@@ -45,7 +39,6 @@
 
   </div>
 </div>
-<!--  hide header and footer from login page after loggin out -->
 <script>
   hideElement($("header"));
   hideElement($("footer"));

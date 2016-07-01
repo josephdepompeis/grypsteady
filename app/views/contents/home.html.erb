@@ -118,3 +118,27 @@
       <a href="#" class="btn btn-default btn-lg btn-block">Block level button</a>
     </div>
 </div>
+
+<% @designs.each do |design| %>
+<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+    <div class="hovereffect">
+        <img class="img-responsive" src="<%= asset_path( 'gryppy.jpg' ) %>" alt="">
+            <div class="overlay">
+                <h2><%= design.id %> </h2>
+				<p>
+					<a href="#">LINK HERE</a>
+
+
+				</p>
+            </div>
+    </div>
+    <div class="well well-lg">
+      Grypper Style 1
+      <%= link_to 'Add To Cart', cart_items_add_to_cart_path(:design_id => design.id), :method => :post, class: "btn btn-default btn-lg btn-block" %>
+    </div>
+</div>
+<% end %>
+
+
+
+<%= render partial: 'item_grid', locals: { user_cart: @user_cart} %>

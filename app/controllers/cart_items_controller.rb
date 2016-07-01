@@ -22,19 +22,15 @@ class CartItemsController < ApplicationController
   end
 
   def add_to_cart
-    design = Design.find(params[:design_id])
-    @fabric_type = Board.find(params[:board_id]).fabric_type
-
-
-
+    design_properties = Design.find(params[:design_id])
     user_cart = User.find(session[:user_id]).carts.first.id
-    api_response = []
-    api_response << design.get_json_for_design(design.spoonflower_id, design.id)
-    api_values = api_response.first
-    api_values << user_cart
-    cart_item = CartItem.new
-    cart_item.create_cart_item_from_design(api_values, @fabric_type)
-    redirect_to carts_path
+    cart_item = CartItem.create!(design_id: design_properties.id, cart_id: user_cart)
+    @selected = user_cart
+    respond_to do |format|
+        format.js
+
+
+
   end
 
   def add_entire_board
