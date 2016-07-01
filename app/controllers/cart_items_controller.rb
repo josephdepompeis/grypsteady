@@ -25,9 +25,6 @@ class CartItemsController < ApplicationController
     design_properties = Design.find(params[:design_id])
     user_cart = User.find(session[:user_id]).carts.first.id
     cart_item = CartItem.create!(design_id: design_properties.id, cart_id: user_cart)
-    @selected = user_cart
-    respond_to do |format|
-        format.js
 
 
 
