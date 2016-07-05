@@ -13,9 +13,19 @@ class ContentsController < ApplicationController
   end
 
   def home
-
   @designs = Design.all
-  @user_cart = User.find(session[:user_id]).carts.first
+
+  if session[:user_id] != nil
+    @user_cart = User.find(session[:user_id]).carts.first
+  end
+
+  if session[:cart_id] == nil
+    @user_cart = Cart.create!(user_id: 0)
+    session[:cart_id] = @user_cart.id
+  else
+    @user_cart = Cart.where(id: session[:cart_id]).first
+
+  end
 
   end
 

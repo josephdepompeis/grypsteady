@@ -23,9 +23,19 @@ class CartItemsController < ApplicationController
 
   def add_to_cart
     design_properties = Design.find(params[:design_id])
-    user_cart = User.find(session[:user_id]).carts.first.id
-    cart_item = CartItem.create!(design_id: design_properties.id, cart_id: user_cart)
 
+    if session[:user_id] != nil
+      user_cart = Cart.where(user_id: session[:user_id]).first
+    else
+      user_cart = Cart.where(id: session[:cart_id]).first
+    end
+
+
+    cart_item = CartItem.create!(design_id: design_properties.id, cart_id: user_cart.id)
+
+
+    
+    redirect_to carts_path
 
 
   end

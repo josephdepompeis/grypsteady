@@ -27,6 +27,7 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:user_id] = nil
+    session[:cart_id] = nil
     session[:omniauth] = nil
     redirect_to root_path, notice: "You have logged out."
   end

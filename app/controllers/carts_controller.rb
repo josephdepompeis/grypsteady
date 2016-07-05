@@ -1,6 +1,5 @@
 class CartsController < ApplicationController
   before_action :set_cart, only: [:show, :edit, :update, :destroy]
-  before_action :check_user
 
   # GET /carts
   # GET /carts.json
@@ -9,10 +8,13 @@ class CartsController < ApplicationController
     # @cart = Cart.where(user_id: session[:user_id]).first
     # byebug
 
+    if session[:user_id] != nil
+      @cart = Cart.where(user_id: session[:user_id]).first
+    else
+      @cart = Cart.where(id: session[:cart_id]).first
+    end
 
-    @cart = Cart.where(user_id: session[:user_id]).first
-
-
+    
 
       @amount = @cart.calculate_price_based_on_qty
 
