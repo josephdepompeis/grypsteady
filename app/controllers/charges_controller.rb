@@ -41,9 +41,10 @@ class ChargesController < ApplicationController
       :currency    => 'usd',
       :receipt_email => customer.email
     )
-  
+
     receipt_details = @cart.prepare_receipt_details(@amount, @charge)
     @receipt = @cart.create_receipt(receipt_details)
+    
     @cart.mark_cart_items_purchased(@receipt.id)
 
 
