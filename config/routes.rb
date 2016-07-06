@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
 
+  resources :reviews
   resources :receipts
   resources :cart_items
   resources :carts
-  root 'sessions#new'
+  root 'contents#home'
 
   get '/auth/:provider/callback' => 'sessions#create'
   get '/auth/failure' => 'sessions#new'
@@ -30,6 +31,8 @@ Rails.application.routes.draw do
 
   get 'contents/cart_area'
   get 'contents/home'
+
+
 
   resources :designs
   resources :users

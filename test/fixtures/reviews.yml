@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  design_id: 1
+  username: MyString
+  note: MyString
+  stars: 1
+  size: 1
+  : 
+  performance: 1
+  gender: MyString
+  boolean: MyString
+  sport: MyString
+  age: 1
+  size_purchased: MyString
+
+two:
+  design_id: 1
+  username: MyString
+  note: MyString
+  stars: 1
+  size: 1
+  : 
+  performance: 1
+  gender: MyString
+  boolean: MyString
+  sport: MyString
+  age: 1
+  size_purchased: MyString

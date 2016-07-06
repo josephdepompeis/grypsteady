@@ -20,7 +20,6 @@ class ChargesController < ApplicationController
   end
 
   def create
-
     if session[:user_id] != nil
       @cart = Cart.where(user_id: session[:user_id]).first
     else
@@ -44,11 +43,8 @@ class ChargesController < ApplicationController
 
     receipt_details = @cart.prepare_receipt_details(@amount, @charge)
     @receipt = @cart.create_receipt(receipt_details)
-    
+
     @cart.mark_cart_items_purchased(@receipt.id)
-
-
-
 
 
   rescue Stripe::CardError => e

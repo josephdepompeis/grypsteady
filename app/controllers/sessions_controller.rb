@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
       user = User.find_by_email(params[:email])
       if user && user.authenticate(params[:password])
         session[:user_id] = user.id
-        redirect_to boards_path(user), notice: "Signed in!"
+        redirect_to contents_home_path, notice: "Signed in!"
       else
         flash[:notice] = 'unvalid email/password combination'
         redirect_to login_path

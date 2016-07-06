@@ -6,12 +6,10 @@ body {
   line-height: 18px;
 }
 
-// p, ol, td {
 p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
-  line-height: 15px;
-   margin: 10px;
+  line-height: 18px;
 }
 
 pre {
@@ -20,19 +18,18 @@ pre {
   font-size: 11px;
 }
 
-// Check with Dennis before un-commenting
-// a {
-//   color: #000;
-//
-//   &:visited {
-//     color: #666;
-//   }
-//
-//   &:hover {
-//     color: #fff;
-//     background-color: #000;
-//   }
-// }
+a {
+  color: #000;
+
+  &:visited {
+    color: #666;
+  }
+
+  &:hover {
+    color: #fff;
+    background-color: #000;
+  }
+}
 
 div {
   &.field, &.actions {

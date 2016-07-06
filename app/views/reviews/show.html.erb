@@ -1,0 +1,64 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Design:</strong>
+  <%= @review.design_id %>
+</p>
+
+<p>
+  <strong>Username:</strong>
+  <%= @review.username %>
+</p>
+
+<p>
+  <strong>Note:</strong>
+  <%= @review.note %>
+</p>
+
+<p>
+  <strong>Stars:</strong>
+  <%= @review.stars %>
+</p>
+
+<p>
+  <strong>Size:</strong>
+  <%= @review.size %>
+</p>
+
+<p>
+  <strong>:</strong>
+  <%= @review.comfort %>
+</p>
+
+<p>
+  <strong>Performance:</strong>
+  <%= @review.performance %>
+</p>
+
+<p>
+  <strong>Gender:</strong>
+  <%= @review.gender %>
+</p>
+
+<p>
+  <strong>Boolean:</strong>
+  <%= @review.boolean %>
+</p>
+
+<p>
+  <strong>Sport:</strong>
+  <%= @review.sport %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @review.age %>
+</p>
+
+<p>
+  <strong>Size purchased:</strong>
+  <%= @review.size_purchased %>
+</p>
+
+<%= link_to 'Edit', edit_review_path(@review) %> |
+<%= link_to 'Back', reviews_path %>

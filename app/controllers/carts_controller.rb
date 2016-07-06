@@ -14,17 +14,16 @@ class CartsController < ApplicationController
       @cart = Cart.where(id: session[:cart_id]).first
     end
 
-    
+
 
       @amount = @cart.calculate_price_based_on_qty
 
-      @fabric_type_options = [['Basic Cotton Ultra', 30], ['Satin', 40], ['Kona® Cotton', 44],
-      ['Performance Piqué', 33], ['Cotton Poplin', 59], ['Poly Crepe de Chine', 39],
-      ['Cotton Lawn Ultra', 47], ['Silky Faille', 23], ['Performance Knit', 21], ['Modern Jersey', 31],
-      ['Cotton Spandex Jersey', 55], ['Fleece', 56], ['Minky', 46],
-      ['Linen-Cotton Canvas', 52], ['Organic Cotton Knit', 5], ['Organic Cotton Sateen', 36],
-      ['Sport Lycra', 50], ['Heavy Cotton Twill', 7], ['Eco Canvas', 34],
-      ['Faux Suede', 32], ['Silk Crepe de Chine', 10]]
+      @size_options = [['Small', 1], ['Medium', 2],
+      ['Large', 3], ['Extra Large', 4]]
+
+
+      @color_options = [['Red', 1], ['Yellow', 2],
+      ['Blue', 3], ['Green', 4]]
 
   end
 
