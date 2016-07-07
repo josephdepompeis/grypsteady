@@ -8,8 +8,7 @@
           </div>
         <% end %>
         <label class="amount">
-          Total: &nbsp; <%= number_to_currency(@amount, :unit => "$")  %>
-
+        </label>
 
 
           <%@cart.cart_items.where(purchased: nil, receipt_id: nil).each do |cart_item| %>
@@ -29,7 +28,8 @@
             <li><span>Size:<%= size %></span></li>
 
           <% end %>
-        </label>
+
+          Total: &nbsp; <%= number_to_currency(@amount, :unit => "$")  %>
 
       </article>
       <br>
