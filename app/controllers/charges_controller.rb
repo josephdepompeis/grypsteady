@@ -13,6 +13,13 @@ class ChargesController < ApplicationController
 
     @amount = @cart.calculate_price_based_on_qty
 
+    size= ""
+
+
+    @color_options = [['Red', 1], ['Yellow', 2],
+    ['Blue', 3], ['Green', 4]]
+
+
     if @amount <= 0
       redirect_to carts_path, notice: 'Please Add A Design Before Checking Out!'
 

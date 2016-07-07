@@ -8,9 +8,27 @@
           </div>
         <% end %>
         <label class="amount">
-
           Total: &nbsp; <%= number_to_currency(@amount, :unit => "$")  %>
 
+
+
+          <%@cart.cart_items.where(purchased: nil, receipt_id: nil).each do |cart_item| %>
+            <ul class="cart-item-container">
+              <li><span>Name:<%= cart_item.design_name %></span></li>
+            <li><span>price: $<%= cart_item.price %>0</span></li>
+            <li><span>quantity:<%= cart_item.quantity %></span></li>
+            <% if cart_item.fabric_type == "1" %>
+            <% size = "Small" %>
+            <% elsif cart_item.fabric_type == "2" %>
+            <% size = "Medium" %>
+            <% elsif cart_item.fabric_type == "3" %>
+            <% size = "Large" %>
+            <% elsif cart_item.fabric_type == "4" %>
+            <% size = "Extra Large"%>
+            <% end %>
+            <li><span>Size:<%= size %></span></li>
+
+          <% end %>
         </label>
 
       </article>
