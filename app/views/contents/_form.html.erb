@@ -1,3 +1,5 @@
+<div class="modal-body">
+
 <%= form_for(@review) do |f| %>
   <% if @review.errors.any? %>
     <div id="error_explanation">
@@ -58,6 +60,18 @@
     <%= f.text_field :size_purchased %>
   </div>
   <div class="actions">
-    <%= f.submit %>
   </div>
+
+
+
+
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+  <%= f.submit 'Submit Review', :class => 'btn btn-primary' %>
+</div>
+
+
+
+
 <% end %>
