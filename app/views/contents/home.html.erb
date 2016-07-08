@@ -135,6 +135,24 @@
     <div class="well well-lg">
       Grypper Style 1
       <%= link_to 'Add To Cart', cart_items_add_to_cart_path(:design_id => design.id), :method => :post, class: "btn btn-default btn-lg btn-block" %>
+      <button onclick="dropdown()">Review This Item</button>
+
     </div>
 </div>
+
+<div id="hidden_form" style="display:none">
+  <%= render partial: 'form', locals: {design: design} %>
+</div>
+
+
+
+
 <% end %>
+
+
+<script>
+function dropdown()
+{
+    document.getElementById("hidden_form").style.display="block";
+}
+</script>

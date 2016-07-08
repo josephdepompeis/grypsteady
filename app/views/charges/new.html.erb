@@ -16,16 +16,18 @@
               <li><span>Name:<%= cart_item.design_name %></span></li>
             <li><span>price: $<%= cart_item.price %>0</span></li>
             <li><span>quantity:<%= cart_item.quantity %></span></li>
+
             <% if cart_item.fabric_type == "1" %>
-            <% size = "Small" %>
+              <% size = "Small" %>
             <% elsif cart_item.fabric_type == "2" %>
-            <% size = "Medium" %>
+              <% size = "Medium" %>
             <% elsif cart_item.fabric_type == "3" %>
-            <% size = "Large" %>
+              <% size = "Large" %>
             <% elsif cart_item.fabric_type == "4" %>
-            <% size = "Extra Large"%>
+              <% size = "Extra Large"%>
             <% end %>
-            <li><span>Size:<%= size %></span></li>
+            <li><span>Size: <%= size %></span></li>
+          </ul>
 
           <% end %>
 
