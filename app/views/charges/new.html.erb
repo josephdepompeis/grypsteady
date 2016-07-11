@@ -36,6 +36,41 @@
       </article>
       <br>
 
+
+
+
+
+      <div class="well well-lg">
+        Grypper Style 1
+        <button type="button" class="btn btn-default btn-lg btn-block" data-toggle="modal" data-target="#myModal">
+        Leave a Review</button>
+        <button type="button" class="btn btn-default btn-lg btn-block" data-toggle="modal" data-target="#myModalReviews">
+        See Other Reviews</button>
+      </div>
+
+
+
+
+
+
+      <!-- Modal -->
+      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <h4 class="modal-title" id="myModalLabel">Review Item</h4>
+            </div>
+                <%= render partial: 'shipping_form', locals: {shipping: @shipping} %>
+          </div>
+        </div>
+      </div>
+
+
+
+
       <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
               data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
               data-description="SpoonBoards Order Total"

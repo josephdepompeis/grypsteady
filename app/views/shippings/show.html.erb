@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @shipping.name %>
+</p>
+
+<p>
+  <strong>Adr 1:</strong>
+  <%= @shipping.adr_1 %>
+</p>
+
+<p>
+  <strong>Adr 2:</strong>
+  <%= @shipping.adr_2 %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @shipping.state %>
+</p>
+
+<p>
+  <strong>Zip:</strong>
+  <%= @shipping.zip %>
+</p>
+
+<p>
+  <strong>Total:</strong>
+  <%= @shipping.total %>
+</p>
+
+<%= link_to 'Edit', edit_shipping_path(@shipping) %> |
+<%= link_to 'Back', shippings_path %>

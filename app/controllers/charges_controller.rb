@@ -2,7 +2,7 @@ class ChargesController < ApplicationController
 
   def new
 
-
+    @shipping = Shipping.new
 
     if session[:user_id] != nil
       @cart = Cart.where(user_id: session[:user_id]).first
