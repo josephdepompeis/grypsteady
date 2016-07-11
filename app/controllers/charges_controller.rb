@@ -2,13 +2,27 @@ class ChargesController < ApplicationController
 
   def new
 
-    @shipping = Shipping.new
+
+
+
+
+
+
+
 
     if session[:user_id] != nil
       @cart = Cart.where(user_id: session[:user_id]).first
     else
       @cart = Cart.where(id: session[:cart_id]).first
     end
+
+
+    if @cart.shippings.empty? != true
+      @shipping = @cart.shippings.first
+    else
+      @shipping = Shipping.new
+    end
+
 
 
     @amount = @cart.calculate_price_based_on_qty
