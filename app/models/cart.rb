@@ -1,6 +1,7 @@
 class Cart < ActiveRecord::Base
   belongs_to :user
   has_many :cart_items
+  has_many :shippings
   validates :user_id, presence: true
 
   def calculate_price_based_on_qty

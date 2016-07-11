@@ -11,6 +11,12 @@
     </div>
   <% end %>
 
+
+  <div class="field">
+    <%= f.hidden_field :cart_id, value: session[:cart_id] %>
+  </div>
+
+
   <div class="field">
     <%= f.label :name %><br>
     <%= f.text_field :name %>

@@ -100,6 +100,7 @@ ActiveRecord::Schema.define(version: 20160711182352) do
     t.string   "state"
     t.integer  "zip"
     t.integer  "total"
+    t.integer  "cart_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

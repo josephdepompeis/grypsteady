@@ -7,7 +7,7 @@ class CreateShippings < ActiveRecord::Migration
       t.string :state
       t.integer :zip
       t.integer :total
-
+      t.integer :cart_id
       t.timestamps null: false
     end
   end

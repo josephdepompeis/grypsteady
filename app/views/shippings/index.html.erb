@@ -18,6 +18,8 @@
   <tbody>
     <% @shippings.each do |shipping| %>
       <tr>
+        <td><%= shipping.cart_id %></td>
+
         <td><%= shipping.name %></td>
         <td><%= shipping.adr_1 %></td>
         <td><%= shipping.adr_2 %></td>
