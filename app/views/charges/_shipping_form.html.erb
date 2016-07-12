@@ -19,11 +19,11 @@
 
   <div class="field">
     <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, :required => true%>
   </div>
   <div class="field">
     <%= f.label :adr_1 %><br>
-    <%= f.text_field :adr_1 %>
+    <%= f.text_field :adr_1, :required => true %>
   </div>
   <div class="field">
     <%= f.label :adr_2 %><br>
@@ -31,11 +31,11 @@
   </div>
   <div class="field">
     <%= f.label :state %><br>
-    <%= f.text_field :state %>
+    <%= f.text_field :state, :required => true %>
   </div>
   <div class="field">
     <%= f.label :zip %><br>
-    <%= f.number_field :zip %>
+    <%= f.number_field :zip, :required => true %>
   </div>
   <div class="field">
     <%= f.hidden_field :total, value: @amount %>
