@@ -17,7 +17,24 @@
             <% elsif cart_item.fabric_type == "4" %>
               <% size = "Extra Large"%>
             <% end %>
+
+
+
+            <% if cart_item.color == "1" %>
+              <% color = "Red" %>
+            <% elsif cart_item.color == "2" %>
+              <% color = "Yellow" %>
+            <% elsif cart_item.color == "3" %>
+              <% color = "Blue" %>
+            <% elsif cart_item.color == "4" %>
+              <% color = "Green"%>
+            <% end %>
+
+
+
             <li><span>Size: <%= size %></span></li>
+            <li><span>Color: <%= color %></span></li>
+
           </ul>
 
           <% end %>

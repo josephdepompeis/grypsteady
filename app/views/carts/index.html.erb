@@ -18,6 +18,11 @@
       <li>
         <div class="cart-item-fabric"><%= f.select :fabric_type, @size_options, class: "test-select" %></div>
       </li>
+
+      <li>
+        <div class="cart-item-fabric"><%= f.select :color, @color_options, class: "test-select" %></div>
+      </li>
+
       <li>
         <%= f.number_field :quantity, class: "cart-item-quantity", min: "1", step: "1" %>
       </li>

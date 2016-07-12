@@ -34,7 +34,7 @@ class CartItemsController < ApplicationController
     cart_item = CartItem.create!(design_id: design_properties.id, cart_id: user_cart.id)
 
 
-    
+
     redirect_to carts_path
 
 
@@ -114,6 +114,6 @@ class CartItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def cart_item_params
-      params.require(:cart_item).permit(:cart_id, :price, :quantity, :design_name, :design_id, :spoonflower_id, :thumbnail_url, :fabric_type, :purchased)
+      params.require(:cart_item).permit(:cart_id, :price, :quantity, :design_name, :design_id, :spoonflower_id, :thumbnail_url, :fabric_type, :purchased, :color)
     end
 end

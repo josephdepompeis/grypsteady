@@ -28,6 +28,8 @@ class ChargesController < ApplicationController
     @amount = @cart.calculate_price_based_on_qty
 
     size= ""
+    color= ""
+
 
 
     @color_options = [['Red', 1], ['Yellow', 2],
