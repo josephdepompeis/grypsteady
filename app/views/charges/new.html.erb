@@ -51,7 +51,11 @@
         </div>
       </div>
 
+<% if @shipping.cart_id == nil %>
 
+
+
+      <% else %>
 
 
       <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
@@ -62,6 +66,8 @@
               data-billingAddress="true">
 
       </script>
+
+<% end %>
 
 
 

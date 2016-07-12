@@ -17,7 +17,7 @@ class ChargesController < ApplicationController
     end
 
 
-    if @cart.shippings.empty? != true
+    if @cart.shippings.empty? == false
       @shipping = @cart.shippings.first
     else
       @shipping = Shipping.new
